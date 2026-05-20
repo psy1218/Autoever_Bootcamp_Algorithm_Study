@@ -19,5 +19,5 @@ def solution(stones, k):
             end = mid - 1
         else:
             start = mid + 1
-        
+
     return answer
