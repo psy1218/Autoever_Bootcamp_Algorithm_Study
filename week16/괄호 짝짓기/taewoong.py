@@ -1,27 +1,25 @@
-
 for tc in range(10):
     N = int(input())
-    a = list(map(str, input()))
-    arr = list()
+    lst = list(map(str, input()))
+    stck = list()
 
-   
+    
     left = ['(', '{', '[', '<']
     
     right = [')', '}', ']', '>']
     for i in range(N):
-        if a[i] in left:
-            arr.append(lst[i])
-        if a[i] in right:
-            
-            if right.index(a[i]) == left.index(arr[-1]):
+        if lst[i] in left:
+            stck.append(lst[i])
+        if lst[i] in right:
+           
+            if right.index(lst[i]) == left.index(stck[-1]):
                 
-                arr.pop()   
+                stck.pop()   
             else:
                 break
                 
-    sol = 0
-    if len(arr) == 0:
-        sol = 1
+    res = 0
+    if len(stck) == 0:
+        res = 1
     
-    print("#{} {}".format(tc + 1, sol))
-
+    print("#{} {}".format(tc + 1, res))
